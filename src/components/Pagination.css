@@ -1,0 +1,74 @@
+/* ================= PAGINATION ================= */
+
+.pagination-wrapper {
+  margin-top: 50px;
+  margin-bottom: 80px; /* more space below */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Page numbers container */
+.page-numbers {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Base button style */
+.page-btn {
+  min-width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1; /* darker border for contrast */
+  background: #f8fafc; /* slightly tinted bg */
+  color: #1e293b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover */
+.page-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* Active page */
+.page-btn.active {
+  background: linear-gradient(135deg, #14b8a6, #6366f1);
+  color: white;
+  border: none;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+/* Prev / Next */
+.nav-btn {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Disabled */
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px) {
+  .pagination-wrapper {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  .page-btn {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+}

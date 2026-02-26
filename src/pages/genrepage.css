@@ -1,0 +1,117 @@
+/* ================= PAGE STRUCTURE ================= */
+
+.genres-page {
+  padding-top: 10px;
+}
+
+.genres-header {
+  margin-bottom: 24px;
+}
+
+.genres-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ================= GRID ================= */
+
+.genres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+/* ================= CARD ================= */
+
+.genre-card {
+  border-radius: 20px;
+  padding: 22px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Soft layered background */
+.genre-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.08),
+    rgba(20, 184, 166, 0.08)
+  );
+  z-index: 0;
+}
+
+.genre-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.genre-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= TEXT ================= */
+
+.genre-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.genre-category {
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e0f2fe, #f0fdf4);
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .genres-grid {
+    gap: 16px;
+  }
+
+  .genres-title {
+    font-size: 1.6rem;
+  }
+
+  
+  .genre-card {
+    padding: 16px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  }
+  
+}
+
+/* ================= CATEGORY COLORS ================= */
+
+/* Books Category */
+.category-book {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+/* Screen Category (Movies + Series) */
+.category-screen {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  color: #075985;
+  border: 1px solid #7dd3fc;
+}

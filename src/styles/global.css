@@ -1,0 +1,191 @@
+/* ================= ROOT DESIGN TOKENS ================= */
+
+:root {
+  --bg: #f8fafc;               /* soft neutral background */
+  --card-bg: #ffffff;
+  --primary: #0f172a;          /* strong heading color */
+  --accent: #6366f1;           /* primary accent */
+  --accent-soft: #14b8a6;      /* secondary accent */
+  --muted: #64748b;            /* secondary text */
+  --border: #e2e8f0;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+
+  --shadow-soft: 0 6px 24px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= RESET ================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #f1f5f9 40%,
+    #ffffff 100%
+  );
+  color: var(--primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ================= LINKS ================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ================= SHARED GRID ================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+  align-items: stretch;
+}
+
+/* ================= SHARED CARD BASE ================= */
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .grid {
+    gap: 18px;
+    margin-top: 20px;
+  }
+}
+/* Here are all the revised global css */
+/* ================= EMPTY STATE ================= */
+
+.empty-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.empty-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 18px;
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+}
+
+.empty-icon {
+  font-size: 42px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #14b8a6, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.empty-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.empty-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ================= BASE BADGE ================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+/* ================= COMPLETED ================= */
+
+.badge-completed {
+  background: rgba(34, 197, 94, 0.15);
+  color: #15803d;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+/* ================= READING ================= */
+
+.badge-reading {
+  background: rgba(99, 102, 241, 0.15);
+  color: #4338ca;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+}
+
+/* ================= NOT STARTED ================= */
+
+.badge-notstarted {
+  background: rgba(251, 146, 60, 0.15);
+  color: #c2410c;
+  border: 1px solid rgba(251, 146, 60, 0.35);
+}
+
+/* ================= HOVER EFFECT ================= */
+
+.badge:hover {
+  transform: translateY(-1px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px) {
+  .badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+}

@@ -1,0 +1,169 @@
+/* ================= PAGE STRUCTURE ================= */
+
+.movies-page {
+  padding-top: 10px;
+}
+
+.movies-header {
+  margin-bottom: 18px;
+}
+
+/* ================= QUOTE BLOCK ================= */
+
+.quote-block {
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 32px; /* space before filters */
+}
+
+/* Clean underline under BOTH lines */
+.quote-block::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  height: 4px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6366f1, #14b8a6);
+}
+
+/* First Line */
+.movies-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Second Line */
+.movies-title-2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 4px 0 0 0; /* tight spacing */
+  opacity: 0.9;
+}
+
+/* ================= FILTERS ================= */
+
+.movies-filters {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* ================= STATES ================= */
+
+.movies-state,
+.movies-error {
+  text-align: center;
+  padding: 30px 0;
+  font-weight: 500;
+}
+
+.movies-error {
+  color: #dc2626;
+}
+
+/* ================= GRID ================= */
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* ================= CARD ================= */
+
+.movie-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 140px;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= CARD TOP ================= */
+
+.movie-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.movie-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+/* ================= GENRES ================= */
+
+.movie-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genre-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
+}
+
+.genre-pill:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .movies-grid {
+    gap: 18px;
+  }
+
+  .movie-card {
+    padding: 18px;
+  }
+
+  .movies-title {
+    font-size: 1.5rem;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+
+  .movies-title-2 {
+    font-size: 1.1rem;
+    margin-top: 2px;
+  }
+
+  .quote-block {
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+  }
+
+  .quote-block::after {
+    width: 70%;   /* slightly longer underline on mobile */
+    height: 3px;
+  }
+}
