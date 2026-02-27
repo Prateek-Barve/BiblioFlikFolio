@@ -76,6 +76,7 @@ export default function BooksPage() {
       <StatusFilter
         selected={selectedStatus}
         onChange={setSelectedStatus}
+        data={"books"}
       />
     </div>
 
@@ -91,7 +92,7 @@ export default function BooksPage() {
             <div key={book.id} className="book-card">
               <div className="book-card-top">
                 <h3 className="book-title">{book.title}</h3>
-                <StatusBadge status={book.status} />
+                <StatusBadge status={book.status} date="books" />
               </div>
 
               <p className="book-author">{book.author}</p>

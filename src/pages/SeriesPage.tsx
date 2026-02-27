@@ -72,6 +72,7 @@ export default function SeriesPage() {
       <StatusFilter
         selected={selectedStatus}
         onChange={setSelectedStatus}
+        data={"series"}
       />
     </div>
 
@@ -87,7 +88,7 @@ export default function SeriesPage() {
             <div key={item.id} className="series-card">
               <div className="series-card-top">
                 <h3 className="series-title-text">{item.title}</h3>
-                <StatusBadge status={item.status} />
+                <StatusBadge status={item.status} date="series" />
               </div>
 
               <div className="series-genres">

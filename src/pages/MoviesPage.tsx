@@ -72,6 +72,7 @@ export default function MoviesPage() {
       <StatusFilter
         selected={selectedStatus}
         onChange={setSelectedStatus}
+        data={"movies"}
       />
     </div>
 
@@ -87,7 +88,7 @@ export default function MoviesPage() {
             <div key={movie.id} className="movie-card">
               <div className="movie-card-top">
                 <h3 className="movie-title">{movie.title}</h3>
-                <StatusBadge status={movie.status} />
+                <StatusBadge status={movie.status} date="movies" />
               </div>
 
               <div className="movie-genres">
